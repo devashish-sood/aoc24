@@ -5,11 +5,11 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github devashish-sood/aoc24))
 
-(authors "Author Name")
+(authors "Devashish Sood")
 
-(maintainers "Maintainer Name")
+(maintainers "Devashish Sood")
 
 (license LICENSE)
 

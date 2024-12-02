@@ -1,2 +1,5 @@
 (library
- (name aoc24))
+ (name aoc24)
+ (libraries days core)
+ (preprocess
+  (pps ppx_jane)))

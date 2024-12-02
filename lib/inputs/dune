@@ -1,0 +1,3 @@
+(library
+ (name inputs)
+ (public_name aoc24.inputs)) 
