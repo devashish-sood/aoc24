@@ -1,9 +1,4 @@
-(* regex for p1 "mul([0-9]+,[0-9]+)"  ocaml specific *)
 let parse input =
-  (* let parseline line =
-       List.map int_of_string
-         (String.split_on_char ' ' line |> List.filter (fun x -> x <> ""))
-     in *)
   input |> String.split_on_char '\n'
 
 let mul_pattern = Str.regexp "mul([0-9]+,[0-9]+)"
