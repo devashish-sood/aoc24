@@ -1,3 +1,4 @@
 (library
  (name days)
- (public_name aoc24.days))
+ (public_name aoc24.days)
+ (libraries str))
