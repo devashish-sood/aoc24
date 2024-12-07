@@ -10,10 +10,6 @@ let in_bounds r c g =
 let letter_match l r c g = l = g.(r).(c)
 
 let rec find_word (w : char list) (dir : int * int) r c g =
-  print_endline ("Char list: " ^ (String.of_seq (List.to_seq w)));
-  print_endline ("Direction: " ^ (string_of_int (fst dir)) ^ ", " ^ (string_of_int (snd dir)));
-  print_endline ("Row: " ^ (string_of_int r) ^ ", Column: " ^ (string_of_int c));
-  print_endline ("Value at g[" ^ (string_of_int r) ^ "][" ^ (string_of_int c) ^ "]: " ^ (if in_bounds r c g then String.make 1 g.(r).(c) else "oob"));
   if in_bounds r c g then
     match w with
     | [] -> 0
@@ -63,9 +59,11 @@ let part2 input =
   |> Array.mapi (fun r_index row ->
          Array.mapi
            (fun c_index letter ->
-            Printf.printf "Processing position (%d, %d): %c\n" r_index c_index letter;
              match letter with
              | 'A' -> findx_mas r_index c_index graph
              | _ -> false)
            row)
-  |> Array.fold_left (fun acc row -> acc + Array.fold_left ( fun r_acc c -> r_acc + (if c then 1 else 0)) 0 row) 0
+  |> Array.fold_left
+       (fun acc row ->
+         acc + Array.fold_left (fun r_acc c -> r_acc + if c then 1 else 0) 0 row)
+       0
