@@ -1,3 +1,4 @@
 (library
  (name runner)
- (public_name aoc24.runner))
+ (public_name aoc24.runner)
+ (libraries core days))

@@ -39,3 +39,5 @@ let part2 input =
       match IntMap.find_opt x freqs with None -> acc | Some y -> (x * y) + acc)
     0
     (List.map (fun x -> fst x) parsed)
+
+let solutions : Types.day = { part1; part2 }

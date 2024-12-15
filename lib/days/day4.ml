@@ -67,3 +67,5 @@ let part2 input =
        (fun acc row ->
          acc + Array.fold_left (fun r_acc c -> r_acc + if c then 1 else 0) 0 row)
        0
+
+let solutions : Types.day = { part1; part2 }

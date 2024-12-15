@@ -1,17 +1,10 @@
 open Core
 
-let file = "inputs/3/actual.txt"
+let command =
+  Command.basic ~summary:"Advent of Code 2024"
+    (let%map_open.Command day = anon ("day" %: int)
+     and partial = flag "--partial" no_arg ~doc:"Run partial solution"
+     and test = flag "--test" no_arg ~doc:"Run against test" in
+     fun () -> Runner.run day partial test)
 
-let res_part_1 =
-  let raw_file = In_channel.read_all file in
-  raw_file |> Days.Day3.part1
-;;
-
-printf "Result: %d\n" res_part_1
-
-let res_part_2 =
-  let raw_file = In_channel.read_all file in
-  raw_file |> Days.Day3.part2
-;;
-
-printf "Result: %d\n" res_part_2;;
+let () = Command_unix.run command

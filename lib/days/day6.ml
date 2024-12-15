@@ -36,3 +36,6 @@ let part1 input =
     | Some pos -> (fst pos, snd pos)
   in
   IntPairSet.cardinal (walk sx sy (-1, 0) IntPairSet.empty graph) + 1
+
+let part2 input = String.length input
+let solutions : Types.day = { part1; part2 }

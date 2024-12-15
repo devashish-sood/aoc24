@@ -43,6 +43,10 @@ let rec valid_pages pre suc graph =
 
 let part1 input =
   let graph, updates = input |> parse in
-  List.filter (fun pages -> valid_pages [] pages graph) updates |> List.map (fun l -> int_of_string (List.nth l (List.length l / 2))) |>  List.fold_left (+) 0;;
+  List.filter (fun pages -> valid_pages [] pages graph) updates
+  |> List.map (fun l -> int_of_string (List.nth l (List.length l / 2)))
+  |> List.fold_left ( + ) 0
 
 (*Topological sort, grab the numbers that are needed, remove any edges not showing up, and then topo sort based on the length of the set*)
+let part2 input = String.length input
+let solutions : Types.day = { part1; part2 }

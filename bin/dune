@@ -1,6 +1,6 @@
 (executable
  (public_name aoc24)
  (name main)
- (libraries aoc24 core)
+ (libraries runner core core_unix.command_unix)
  (preprocess
   (pps ppx_jane)))

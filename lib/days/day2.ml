@@ -60,3 +60,5 @@ let part2 input =
     (List.filter
        (fun seq -> tolerant_ascending seq [] || tolerant_descending seq [])
        parsed_input)
+
+let solutions : Types.day = { part1; part2 }

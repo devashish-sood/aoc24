@@ -32,3 +32,5 @@ let part2 input =
   input |> parse
   |> List.map (get_delim_for_regex conditional_mul_pattern)
   |> List.flatten |> apply_conditions true 0
+
+let solutions : Types.day = { part1; part2 }
